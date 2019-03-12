@@ -5,7 +5,7 @@
  <session-factory name="">
   <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
   <!-- <property name="hibernate.connection.password">123abc</property> -->
-  <property name="hibernate.connection.password">GardenOfEden231</property>
+  <property name="hibernate.connection.password">Admincssfv2015</property>
   <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/estudio_sostenible</property>
   <property name="hibernate.connection.username">postgres</property>
   <property name="hibernate.default_schema">public</property>

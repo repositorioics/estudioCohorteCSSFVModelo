@@ -2300,7 +2300,7 @@ public class HojaConsulta implements java.io.Serializable {
 		this.diagnostico4 = diagnostico4;
 	}
 
-	@Column(name = "otro_diagnostico", length = 64)
+	@Column(name = "otro_diagnostico", length = 500)
 	public String getOtroDiagnostico() {
 		return this.otroDiagnostico;
 	}
