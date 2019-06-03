@@ -1868,7 +1868,7 @@ public class HojaConsulta implements java.io.Serializable {
 		this.hospitalizado = hospitalizado;
 	}
 
-	@Column(name = "hospitalizado_especificar", length = 32)
+	@Column(name = "hospitalizado_especificar", length = 500) // 500
 	public String getHospitalizadoEspecificar() {
 		return this.hospitalizadoEspecificar;
 	}
@@ -1886,7 +1886,7 @@ public class HojaConsulta implements java.io.Serializable {
 		this.transfusionSangre = transfusionSangre;
 	}
 
-	@Column(name = "transfusion_especificar", length = 32)
+	@Column(name = "transfusion_especificar", length = 500) //500
 	public String getTransfusionEspecificar() {
 		return this.transfusionEspecificar;
 	}
@@ -1904,7 +1904,7 @@ public class HojaConsulta implements java.io.Serializable {
 		this.tomandoMedicamento = tomandoMedicamento;
 	}
 
-	@Column(name = "medicamento_especificar", length = 32)
+	@Column(name = "medicamento_especificar", length = 500) //500
 	public String getMedicamentoEspecificar() {
 		return this.medicamentoEspecificar;
 	}
@@ -1922,7 +1922,7 @@ public class HojaConsulta implements java.io.Serializable {
 		this.medicamentoDistinto = medicamentoDistinto;
 	}
 
-	@Column(name = "medicamento_dist_especificar", length = 32)
+	@Column(name = "medicamento_dist_especificar", length = 500) //500
 	public String getMedicamentoDistEspecificar() {
 		return this.medicamentoDistEspecificar;
 	}

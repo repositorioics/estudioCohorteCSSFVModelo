@@ -90,7 +90,7 @@ public class PerifericoResultadoId implements java.io.Serializable {
 		this.anisocromia = anisocromia;
 	}
 
-	@Column(name = "poiquilocitosis", length = 32)
+	@Column(name = "poiquilocitosis", length = 124)
 	public String getPoiquilocitosis() {
 		return this.poiquilocitosis;
 	}

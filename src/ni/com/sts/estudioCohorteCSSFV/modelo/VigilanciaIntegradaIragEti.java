@@ -93,6 +93,7 @@ public class VigilanciaIntegradaIragEti implements java.io.Serializable {
 	private Character estornudos;
 	private Character otraManifestacionClinica;
 	private String cualManifestacionClinica;
+	private Short usuarioMedico;
 
 	public VigilanciaIntegradaIragEti() {
 	}
@@ -124,7 +125,7 @@ public class VigilanciaIntegradaIragEti implements java.io.Serializable {
 			Short cuantosDiasLeDioElUltimoAntibiotico, Character viaOral, Character viaParenteral, Character viaAmbas,
 			Character antecedentesUsoAntivirales, String nombreAntiviral, Date fecha1raDosis, Date fechaUltimaDosis,
 			Short noDosisAdministrada, Date fechaCreacion, String otraCondPreexistente, int numHojaConsulta, Character estornudos,
-			Character otraManifestacionClinica, String cualManifestacionClinica) {
+			Character otraManifestacionClinica, String cualManifestacionClinica, Short usuarioMedico) {
 		this.secVigilanciaIntegrada = secVigilanciaIntegrada;
 		this.secHojaConsulta = secHojaConsulta;
 		this.codExpediente = codExpediente;
@@ -199,6 +200,7 @@ public class VigilanciaIntegradaIragEti implements java.io.Serializable {
 		this.estornudos = estornudos;
 		this.otraManifestacionClinica = otraManifestacionClinica;
 		this.cualManifestacionClinica = cualManifestacionClinica;
+		this.usuarioMedico = usuarioMedico;
 	}
 
 	@Id
@@ -865,11 +867,19 @@ public class VigilanciaIntegradaIragEti implements java.io.Serializable {
 	public void setOtraManifestacionClinica(Character otraManifestacionClinica) {
 		this.otraManifestacionClinica = otraManifestacionClinica;
 	}
-	@Column(name = "cual_manifestacion_clinica", length = 4)
+	@Column(name = "cual_manifestacion_clinica", length = 74)
 	public String getCualManifestacionClinica() {
 		return this.cualManifestacionClinica;
 	}
 	public void setCualManifestacionClinica(String cualManifestacionClinica) {
 		this.cualManifestacionClinica = cualManifestacionClinica;
+	}
+	@Column(name = "usuario_medico")
+	public Short getUsuarioMedico() {
+		return this.usuarioMedico;
+	}
+
+	public void setUsuarioMedico(Short usuarioMedico) {
+		this.usuarioMedico = usuarioMedico;
 	}
 }
