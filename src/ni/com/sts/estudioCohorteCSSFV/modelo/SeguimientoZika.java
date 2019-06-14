@@ -69,7 +69,9 @@ public class SeguimientoZika implements java.io.Serializable {
 	private String rinorrea;
 	private String dolorGarganta;
 	private String prurito;
-	
+	private String fotofobia;
+	private String mareos;
+	private String sudoracion;
 	
 	public SeguimientoZika(){
 		
@@ -94,7 +96,7 @@ public class SeguimientoZika implements java.io.Serializable {
 			String debilidadMuscMS, String debilidadMuscMI,
 			String parestesiaMS, String parestesiaMI, String paralisisMuscMS,
 			String paralisisMuscMI, String tos, String rinorrea,
-			String dolorGarganta, String prurito) {
+			String dolorGarganta, String prurito, String fotofobia, String mareos, String sudoracion) {
 		this.secHojaZika = secHojaZika;
 		this.secSegZika = secSegZika;
 		this.controlDia = controlDia;
@@ -147,6 +149,9 @@ public class SeguimientoZika implements java.io.Serializable {
 		this.rinorrea = rinorrea;
 		this.dolorGarganta = dolorGarganta;
 		this.prurito = prurito;
+		this.fotofobia = fotofobia;
+		this.mareos = mareos;
+		this.sudoracion = sudoracion;
 	}
 
 
@@ -673,5 +678,30 @@ public class SeguimientoZika implements java.io.Serializable {
 		this.prurito = prurito;
 	}
 	
+	@Column(name = "fotofobia", nullable = false, length = 2)
+	public String getFotofobia() {
+		return fotofobia;
+	}
+
+	public void setFotofobia(String fotofobia) {
+		this.fotofobia = fotofobia;
+	}
+	
+	@Column(name = "mareos", nullable = false, length = 2)
+	public String getMareos() {
+		return mareos;
+	}
+
+	public void setMareos(String mareos) {
+		this.mareos = mareos;
+	}
+	@Column(name = "sudoracion", nullable = false, length = 2)
+	public String getSudoracion() {
+		return sudoracion;
+	}
+
+	public void setSudoracion(String sudoracion) {
+		this.sudoracion = sudoracion;
+	}
 	
 }
