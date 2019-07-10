@@ -28,22 +28,27 @@ public class HojaInfluenza implements java.io.Serializable {
 	private Date fechaInicio;
 	private Date fechaCierre;
 	private char cerrado;
+	private Character estadoCarga;
+	private String repeatKey; 
 
 	public HojaInfluenza() {
 	}
 
 	public HojaInfluenza(int secHojaInfluenza, int codExpediente,
-			int numHojaSeguimiento, Date fechaInicio, char cerrado) {
+			int numHojaSeguimiento, Date fechaInicio, char cerrado, Character estadoCarga, 
+			String repeatKey) {
 		this.secHojaInfluenza = secHojaInfluenza;
 		this.codExpediente = codExpediente;
 		this.numHojaSeguimiento = numHojaSeguimiento;
 		this.fechaInicio = fechaInicio;
 		this.cerrado = cerrado;
+		this.estadoCarga = estadoCarga;
+		this.repeatKey = repeatKey;
 	}
 
 	public HojaInfluenza(int secHojaInfluenza, int codExpediente,
 			int numHojaSeguimiento, String fif, String fis, Date fechaInicio,
-			Date fechaCierre, char cerrado) {
+			Date fechaCierre, char cerrado, Character estadoCarga, String repeatKey) {
 		this.secHojaInfluenza = secHojaInfluenza;
 		this.codExpediente = codExpediente;
 		this.numHojaSeguimiento = numHojaSeguimiento;
@@ -52,6 +57,8 @@ public class HojaInfluenza implements java.io.Serializable {
 		this.fechaInicio = fechaInicio;
 		this.fechaCierre = fechaCierre;
 		this.cerrado = cerrado;
+		this.estadoCarga = estadoCarga;
+		this.repeatKey = repeatKey;
 	}
 
 	@Id
@@ -129,6 +136,24 @@ public class HojaInfluenza implements java.io.Serializable {
 
 	public void setCerrado(char cerrado) {
 		this.cerrado = cerrado;
+	}
+	
+	@Column(name = "estado_carga", length = 1)
+	public Character getEstadoCarga() {
+		return this.estadoCarga;
+	}
+
+	public void setEstadoCarga(Character estadoCarga) {
+		this.estadoCarga = estadoCarga;
+	}
+
+	@Column(name = "repeat_key", length = 10)
+	public String getRepeatKey() {
+		return this.repeatKey;
+	}
+
+	public void setRepeatKey(String repeatKey) {
+		this.repeatKey = repeatKey;
 	}
 
 }

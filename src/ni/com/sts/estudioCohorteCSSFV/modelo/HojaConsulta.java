@@ -243,8 +243,13 @@ public class HojaConsulta implements java.io.Serializable {
 	private Short pas;
 	private Long telef;
 	private String hora;
-	private String horasv;	
-
+	private String horasv;
+	
+	private String noAtiendeLlamadoEnfermeria;
+	private String noAtiendeLlamadoMedico;
+	
+	private String estudiosParticipantes;
+	
 	public HojaConsulta() {
 	}
 
@@ -351,7 +356,8 @@ public class HojaConsulta implements java.io.Serializable {
 			Date fis, Date fif, BigDecimal hepatomegaliaCm,
 			Character eritrocitos, String planes, Short medicoCambioTurno,
 			Character hemoconc, Short vomito12h, Short pad, Short pas,
-			Long telef, Character oel, String hora, String horasv) {
+			Long telef, Character oel, String hora, String horasv, 
+			String noAtiendeLlamadoEnfermeria, String noAtiendeLlamadoMedico, String estudiosParticipantes) {
 		this.secHojaConsulta = secHojaConsulta;
 		this.codExpediente = codExpediente;
 		this.numHojaConsulta = numHojaConsulta;
@@ -570,6 +576,9 @@ public class HojaConsulta implements java.io.Serializable {
 		this.telef = telef;
 		this.hora = hora;
 		this.horasv = horasv;
+		this.noAtiendeLlamadoEnfermeria = noAtiendeLlamadoEnfermeria;
+		this.noAtiendeLlamadoMedico = noAtiendeLlamadoMedico;
+		this.estudiosParticipantes = estudiosParticipantes;
 	}
 
 	@Id
@@ -2551,4 +2560,31 @@ public class HojaConsulta implements java.io.Serializable {
 		this.horasv = horasv;
 	}
 
+	
+	@Column(name = "no_atiende_llamado_enfermeria", length = 150)
+	public String getNoAtiendeLlamadoEnfermeria() {
+		return noAtiendeLlamadoEnfermeria;
+	}
+
+	public void setNoAtiendeLlamadoEnfermeria(String noAtiendeLlamadoEnfermeria) {
+		this.noAtiendeLlamadoEnfermeria = noAtiendeLlamadoEnfermeria;
+	}
+	
+	@Column(name = "no_atiende_llamado_medico", length = 150)
+	public String getNoAtiendeLlamadoMedico() {
+		return noAtiendeLlamadoMedico;
+	}
+
+	public void setNoAtiendeLlamadoMedico(String noAtiendeLlamadoMedico) {
+		this.noAtiendeLlamadoMedico = noAtiendeLlamadoMedico;
+	}
+	
+	@Column(name = "estudios_participantes")
+	public String getEstudiosParticipantes() {
+		return estudiosParticipantes;
+	}
+
+	public void setEstudiosParticipantes(String estudiosParticipantes) {
+		this.estudiosParticipantes = estudiosParticipantes;
+	}
 }
