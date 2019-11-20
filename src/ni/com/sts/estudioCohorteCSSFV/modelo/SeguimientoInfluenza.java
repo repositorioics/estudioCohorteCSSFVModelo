@@ -41,6 +41,29 @@ public class SeguimientoInfluenza implements java.io.Serializable {
 	private String dificultadRespirar;
 	private String faltaEscuela;
 	private String quedoEnCama;
+	
+	/*Nuevos campos agregados 24/09/2019*/
+	private String fiebreLeve;
+	private String fiebreModerada;
+	private String fiebreSevera;
+	private String tosLeve;
+	private String tosModerada;
+	private String tosSevera;
+	private String secrecionNasalLeve;
+	private String secrecionNasalModerada;
+	private String secrecionNasalSevera;
+	private String dolorGargantaLeve;
+	private String dolorGargantaModerada;
+	private String dolorGargantaSevera;
+	private String dolorCabezaLeve;
+	private String dolorCabezaModerada;
+	private String dolorCabezaSevera;
+	private String dolorMuscularLeve;
+	private String dolorMuscularModerada;
+	private String dolorMuscularSevera;
+	private String dolorArticularLeve;
+	private String dolorArticularModerada;
+	private String dolorArticularSevera;
 
 	public SeguimientoInfluenza() {
 	}
@@ -51,7 +74,15 @@ public class SeguimientoInfluenza implements java.io.Serializable {
 			String dolorGarganta, String congestionNasa, String dolorCabeza,
 			String faltaApetito, String dolorMuscular, String dolorArticular,
 			String dolorOido, String respiracionRapida, String dificultadRespirar,
-			String faltaEscuela, String quedoEnCama) {
+			String faltaEscuela, String quedoEnCama ,
+			/*Nuevos campos agregados 24/09/2019*/
+			String fiebreLeve, String fiebreModerada, String fiebreSevera, 
+			String tosLeve, String tosModerada, String tosSevera, 
+			String secrecionNasalLeve, String secrecionNasalModerada, String secrecionNasalSevera,
+			String dolorGargantaLeve, String dolorGargantaModerada, String dolorGargantaSevera, 
+			String dolorCabezaLeve, String dolorCabezaModerada, String dolorCabezaSevera, 
+			String dolorMuscularLeve, String dolorMuscularModerada, String dolorMuscularSevera, 
+			String dolorArticularLeve, String dolorArticularModerada, String dolorArticularSevera) {
 		this.secHojaInfluenza = secHojaInfluenza;
 		this.secSegInfluenza = secSegInfluenza;
 		this.controlDia = controlDia;
@@ -72,6 +103,28 @@ public class SeguimientoInfluenza implements java.io.Serializable {
 		this.dificultadRespirar = dificultadRespirar;
 		this.faltaEscuela = faltaEscuela;
 		this.quedoEnCama = quedoEnCama;
+		/*Nuevos campos agregados 24/09/2019*/
+		this.fiebreLeve = fiebreLeve;
+		this.fiebreModerada = fiebreModerada;
+		this.fiebreSevera = fiebreSevera;
+		this.tosLeve = tosLeve;
+		this.tosModerada = tosModerada;
+		this.tosSevera = tosSevera;
+		this.secrecionNasalLeve = secrecionNasalLeve;
+		this.secrecionNasalModerada = secrecionNasalModerada;
+		this.secrecionNasalSevera = secrecionNasalSevera;
+		this.dolorGargantaLeve = dolorGargantaLeve;
+		this.dolorGargantaModerada = dolorArticularModerada;
+		this.dolorGargantaSevera = dolorGargantaSevera;
+		this.dolorCabezaLeve = dolorCabezaLeve;
+		this.dolorCabezaModerada = dolorCabezaModerada;
+		this.dolorCabezaSevera = dolorCabezaSevera;
+		this.dolorMuscularLeve = dolorMuscularLeve;
+		this.dolorMuscularModerada = dolorMuscularModerada;
+		this.dolorMuscularSevera = dolorMuscularSevera;
+		this.dolorArticularLeve = dolorArticularLeve;
+		this.dolorArticularModerada = dolorArticularModerada;
+		this.dolorArticularSevera = dolorArticularSevera;
 	}
 
 	@Column(name = "sec_hoja_influenza", nullable = false)
@@ -257,6 +310,196 @@ public class SeguimientoInfluenza implements java.io.Serializable {
 
 	public void setQuedoEnCama(String quedoEnCama) {
 		this.quedoEnCama = quedoEnCama;
+	}
+
+	/*Nuevos campos agregados 24/09/2019*/
+	@Column(name = "fiebre_leve", length = 2)
+	public String getFiebreLeve() {
+		return fiebreLeve;
+	}
+
+	public void setFiebreLeve(String fiebreLeve) {
+		this.fiebreLeve = fiebreLeve;
+	}
+	
+	@Column(name = "fiebre_moderada", length = 2)
+	public String getFiebreModerada() {
+		return fiebreModerada;
+	}
+
+	public void setFiebreModerada(String fiebreModerada) {
+		this.fiebreModerada = fiebreModerada;
+	}
+
+	@Column(name = "fiebre_severa", length = 2)
+	public String getFiebreSevera() {
+		return fiebreSevera;
+	}
+
+	public void setFiebreSevera(String fiebreSevera) {
+		this.fiebreSevera = fiebreSevera;
+	}
+
+	@Column(name = "tos_leve", length = 2)
+	public String getTosLeve() {
+		return tosLeve;
+	}
+
+	public void setTosLeve(String tosLeve) {
+		this.tosLeve = tosLeve;
+	}
+
+	@Column(name = "tos_moderada", length = 2)
+	public String getTosModerada() {
+		return tosModerada;
+	}
+
+	public void setTosModerada(String tosModerada) {
+		this.tosModerada = tosModerada;
+	}
+
+	@Column(name = "tos_severa", length = 2)
+	public String getTosSevera() {
+		return tosSevera;
+	}
+
+	public void setTosSevera(String tosSevera) {
+		this.tosSevera = tosSevera;
+	}
+
+	@Column(name = "secrecion_nasal_leve", length = 2)
+	public String getSecrecionNasalLeve() {
+		return secrecionNasalLeve;
+	}
+
+	public void setSecrecionNasalLeve(String secrecionNasalLeve) {
+		this.secrecionNasalLeve = secrecionNasalLeve;
+	}
+
+	@Column(name = "secrecion_nasal_moderada", length = 2)
+	public String getSecrecionNasalModerada() {
+		return secrecionNasalModerada;
+	}
+
+	public void setSecrecionNasalModerada(String secrecionNasalModerada) {
+		this.secrecionNasalModerada = secrecionNasalModerada;
+	}
+
+	@Column(name = "secrecion_nasal_severa", length = 2)
+	public String getSecrecionNasalSevera() {
+		return secrecionNasalSevera;
+	}
+
+	public void setSecrecionNasalSevera(String secrecionNasalSevera) {
+		this.secrecionNasalSevera = secrecionNasalSevera;
+	}
+
+	@Column(name = "dolor_garganta_leve", length = 2)
+	public String getDolorGargantaLeve() {
+		return dolorGargantaLeve;
+	}
+
+	public void setDolorGargantaLeve(String dolorGargantaLeve) {
+		this.dolorGargantaLeve = dolorGargantaLeve;
+	}
+
+	@Column(name = "dolor_garganta_moderada", length = 2)
+	public String getDolorGargantaModerada() {
+		return dolorGargantaModerada;
+	}
+
+	public void setDolorGargantaModerada(String dolorGargantaModerada) {
+		this.dolorGargantaModerada = dolorGargantaModerada;
+	}
+
+	@Column(name = "dolor_garganta_severa", length = 2)
+	public String getDolorGargantaSevera() {
+		return dolorGargantaSevera;
+	}
+
+	public void setDolorGargantaSevera(String dolorGargantaSevera) {
+		this.dolorGargantaSevera = dolorGargantaSevera;
+	}
+
+	@Column(name = "dolor_cabeza_leve", length = 2)
+	public String getDolorCabezaLeve() {
+		return dolorCabezaLeve;
+	}
+
+	public void setDolorCabezaLeve(String dolorCabezaLeve) {
+		this.dolorCabezaLeve = dolorCabezaLeve;
+	}
+
+	@Column(name = "dolor_cabeza_moderada", length = 2)
+	public String getDolorCabezaModerada() {
+		return dolorCabezaModerada;
+	}
+
+	public void setDolorCabezaModerada(String dolorCabezaModerada) {
+		this.dolorCabezaModerada = dolorCabezaModerada;
+	}
+
+	@Column(name = "dolor_cabeza_severa", length = 2)
+	public String getDolorCabezaSevera() {
+		return dolorCabezaSevera;
+	}
+
+	public void setDolorCabezaSevera(String dolorCabezaSevera) {
+		this.dolorCabezaSevera = dolorCabezaSevera;
+	}
+
+	@Column(name = "dolor_muscular_leve", length = 2)
+	public String getDolorMuscularLeve() {
+		return dolorMuscularLeve;
+	}
+
+	public void setDolorMuscularLeve(String dolorMuscularLeve) {
+		this.dolorMuscularLeve = dolorMuscularLeve;
+	}
+	
+	@Column(name = "dolor_muscular_moderada", length = 2)
+	public String getDolorMuscularModerada() {
+		return dolorMuscularModerada;
+	}
+
+	public void setDolorMuscularModerada(String dolorMuscularModerada) {
+		this.dolorMuscularModerada = dolorMuscularModerada;
+	}
+	
+	@Column(name = "dolor_muscular_severa", length = 2)
+	public String getDolorMuscularSevera() {
+		return dolorMuscularSevera;
+	}
+
+	public void setDolorMuscularSevera(String dolorMuscularSevera) {
+		this.dolorMuscularSevera = dolorMuscularSevera;
+	}
+	
+	@Column(name = "dolor_articular_leve", length = 2)
+	public String getDolorArticularLeve() {
+		return dolorArticularLeve;
+	}
+
+	public void setDolorArticularLeve(String dolorArticularLeve) {
+		this.dolorArticularLeve = dolorArticularLeve;
+	}
+	
+	@Column(name = "dolor_articular_moderada", length = 2)
+	public String getDolorArticularModerada() {
+		return dolorArticularModerada;
+	}
+
+	public void setDolorArticularModerada(String dolorArticularModerada) {
+		this.dolorArticularModerada = dolorArticularModerada;
+	}
+	
+	@Column(name = "dolor_articular_severa", length = 2)
+	public String getDolorArticularSevera() {
+		return dolorArticularSevera;
+	}
+
+	public void setDolorArticularSevera(String dolorArticularSevera) {
+		this.dolorArticularSevera = dolorArticularSevera;
 	}
 
 }

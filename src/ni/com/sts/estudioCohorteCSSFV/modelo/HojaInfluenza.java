@@ -29,14 +29,15 @@ public class HojaInfluenza implements java.io.Serializable {
 	private Date fechaCierre;
 	private char cerrado;
 	private Character estadoCarga;
-	private String repeatKey; 
+	private String repeatKey;
+	private Integer secHojaConsulta;
 
 	public HojaInfluenza() {
 	}
 
 	public HojaInfluenza(int secHojaInfluenza, int codExpediente,
 			int numHojaSeguimiento, Date fechaInicio, char cerrado, Character estadoCarga, 
-			String repeatKey) {
+			String repeatKey, Integer secHojaConsulta) {
 		this.secHojaInfluenza = secHojaInfluenza;
 		this.codExpediente = codExpediente;
 		this.numHojaSeguimiento = numHojaSeguimiento;
@@ -44,11 +45,12 @@ public class HojaInfluenza implements java.io.Serializable {
 		this.cerrado = cerrado;
 		this.estadoCarga = estadoCarga;
 		this.repeatKey = repeatKey;
+		this.secHojaConsulta = secHojaConsulta;
 	}
 
 	public HojaInfluenza(int secHojaInfluenza, int codExpediente,
 			int numHojaSeguimiento, String fif, String fis, Date fechaInicio,
-			Date fechaCierre, char cerrado, Character estadoCarga, String repeatKey) {
+			Date fechaCierre, char cerrado, Character estadoCarga, String repeatKey, Integer secHojaConsulta) {
 		this.secHojaInfluenza = secHojaInfluenza;
 		this.codExpediente = codExpediente;
 		this.numHojaSeguimiento = numHojaSeguimiento;
@@ -59,6 +61,7 @@ public class HojaInfluenza implements java.io.Serializable {
 		this.cerrado = cerrado;
 		this.estadoCarga = estadoCarga;
 		this.repeatKey = repeatKey;
+		this.secHojaConsulta = secHojaConsulta;
 	}
 
 	@Id
@@ -156,4 +159,12 @@ public class HojaInfluenza implements java.io.Serializable {
 		this.repeatKey = repeatKey;
 	}
 
+	@Column(name = "sec_hoja_consulta")
+	public Integer getSecHojaConsulta() {
+		return secHojaConsulta;
+	}
+
+	public void setSecHojaConsulta(Integer secHojaConsulta) {
+		this.secHojaConsulta = secHojaConsulta;
+	}
 }
