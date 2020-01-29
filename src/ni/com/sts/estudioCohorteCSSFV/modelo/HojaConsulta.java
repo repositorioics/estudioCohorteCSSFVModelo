@@ -249,6 +249,7 @@ public class HojaConsulta implements java.io.Serializable {
 	private String noAtiendeLlamadoMedico;
 	
 	private String estudiosParticipantes;
+	private boolean uaf;
 	
 	public HojaConsulta() {
 	}
@@ -357,7 +358,7 @@ public class HojaConsulta implements java.io.Serializable {
 			Character eritrocitos, String planes, Short medicoCambioTurno,
 			Character hemoconc, Short vomito12h, Short pad, Short pas,
 			Long telef, Character oel, String hora, String horasv, 
-			String noAtiendeLlamadoEnfermeria, String noAtiendeLlamadoMedico, String estudiosParticipantes) {
+			String noAtiendeLlamadoEnfermeria, String noAtiendeLlamadoMedico, String estudiosParticipantes, boolean uaf) {
 		this.secHojaConsulta = secHojaConsulta;
 		this.codExpediente = codExpediente;
 		this.numHojaConsulta = numHojaConsulta;
@@ -579,6 +580,7 @@ public class HojaConsulta implements java.io.Serializable {
 		this.noAtiendeLlamadoEnfermeria = noAtiendeLlamadoEnfermeria;
 		this.noAtiendeLlamadoMedico = noAtiendeLlamadoMedico;
 		this.estudiosParticipantes = estudiosParticipantes;
+		this.setUaf(uaf);
 	}
 
 	@Id
@@ -2586,5 +2588,14 @@ public class HojaConsulta implements java.io.Serializable {
 
 	public void setEstudiosParticipantes(String estudiosParticipantes) {
 		this.estudiosParticipantes = estudiosParticipantes;
+	}
+
+	@Column(name = "uaf")
+	public boolean isUaf() {
+		return uaf;
+	}
+
+	public void setUaf(boolean uaf) {
+		this.uaf = uaf;
 	}
 }
