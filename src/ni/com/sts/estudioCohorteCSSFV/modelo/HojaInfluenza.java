@@ -31,13 +31,14 @@ public class HojaInfluenza implements java.io.Serializable {
 	private Character estadoCarga;
 	private String repeatKey;
 	private Integer secHojaConsulta;
+	private String usuarioCerroHoja;
 
 	public HojaInfluenza() {
 	}
 
 	public HojaInfluenza(int secHojaInfluenza, int codExpediente,
 			int numHojaSeguimiento, Date fechaInicio, char cerrado, Character estadoCarga, 
-			String repeatKey, Integer secHojaConsulta) {
+			String repeatKey, Integer secHojaConsulta, String usuarioCerroHoja) {
 		this.secHojaInfluenza = secHojaInfluenza;
 		this.codExpediente = codExpediente;
 		this.numHojaSeguimiento = numHojaSeguimiento;
@@ -46,11 +47,13 @@ public class HojaInfluenza implements java.io.Serializable {
 		this.estadoCarga = estadoCarga;
 		this.repeatKey = repeatKey;
 		this.secHojaConsulta = secHojaConsulta;
+		this.usuarioCerroHoja = usuarioCerroHoja;
 	}
 
 	public HojaInfluenza(int secHojaInfluenza, int codExpediente,
 			int numHojaSeguimiento, String fif, String fis, Date fechaInicio,
-			Date fechaCierre, char cerrado, Character estadoCarga, String repeatKey, Integer secHojaConsulta) {
+			Date fechaCierre, char cerrado, Character estadoCarga, String repeatKey, 
+			Integer secHojaConsulta, String usuarioCerroHoja) {
 		this.secHojaInfluenza = secHojaInfluenza;
 		this.codExpediente = codExpediente;
 		this.numHojaSeguimiento = numHojaSeguimiento;
@@ -62,6 +65,7 @@ public class HojaInfluenza implements java.io.Serializable {
 		this.estadoCarga = estadoCarga;
 		this.repeatKey = repeatKey;
 		this.secHojaConsulta = secHojaConsulta;
+		this.usuarioCerroHoja = usuarioCerroHoja;
 	}
 
 	@Id
@@ -166,5 +170,14 @@ public class HojaInfluenza implements java.io.Serializable {
 
 	public void setSecHojaConsulta(Integer secHojaConsulta) {
 		this.secHojaConsulta = secHojaConsulta;
+	}
+	
+	@Column(name = "usuario_cierra_hoja")
+	public String getUsuarioCerroHoja() {
+		return usuarioCerroHoja;
+	}
+
+	public void setUsuarioCerroHoja(String usuarioCerroHoja) {
+		this.usuarioCerroHoja = usuarioCerroHoja;
 	}
 }

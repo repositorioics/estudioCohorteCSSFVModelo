@@ -64,6 +64,16 @@ public class SeguimientoInfluenza implements java.io.Serializable {
 	private String dolorArticularLeve;
 	private String dolorArticularModerada;
 	private String dolorArticularSevera;
+	
+	/*Nuevos campos agregados*/
+	 private String cuadroConfusional;
+	 private String cuadroNeurologico;
+	 private String confusionMental;
+	 private String anosmia;
+	 private String ageusia;
+	 private String mareo;
+	 private String ictus;
+	 private String sincope;
 
 	public SeguimientoInfluenza() {
 	}
@@ -82,7 +92,9 @@ public class SeguimientoInfluenza implements java.io.Serializable {
 			String dolorGargantaLeve, String dolorGargantaModerada, String dolorGargantaSevera, 
 			String dolorCabezaLeve, String dolorCabezaModerada, String dolorCabezaSevera, 
 			String dolorMuscularLeve, String dolorMuscularModerada, String dolorMuscularSevera, 
-			String dolorArticularLeve, String dolorArticularModerada, String dolorArticularSevera) {
+			String dolorArticularLeve, String dolorArticularModerada, String dolorArticularSevera,
+			String cuadroConfusional, String cuadroNeurologico, String confusionMental, String anosmia,
+			String ageusia, String mareo, String ictus, String sincope) {
 		this.secHojaInfluenza = secHojaInfluenza;
 		this.secSegInfluenza = secSegInfluenza;
 		this.controlDia = controlDia;
@@ -125,6 +137,15 @@ public class SeguimientoInfluenza implements java.io.Serializable {
 		this.dolorArticularLeve = dolorArticularLeve;
 		this.dolorArticularModerada = dolorArticularModerada;
 		this.dolorArticularSevera = dolorArticularSevera;
+		/*Nuevos campos agregados para covid*/
+		this.setCuadroConfusional(cuadroConfusional);
+		this.setCuadroNeurologico(cuadroNeurologico);
+		this.setConfusionMental(confusionMental);
+		this.setAnosmia(anosmia);
+		this.setAgeusia(ageusia);
+		this.setMareo(mareo);
+		this.setIctus(ictus);
+		this.setSincope(sincope);
 	}
 
 	@Column(name = "sec_hoja_influenza", nullable = false)
@@ -500,6 +521,78 @@ public class SeguimientoInfluenza implements java.io.Serializable {
 
 	public void setDolorArticularSevera(String dolorArticularSevera) {
 		this.dolorArticularSevera = dolorArticularSevera;
+	}
+
+	@Column(name = "cuadro_confusional", length = 2)
+	public String getCuadroConfusional() {
+		return cuadroConfusional;
+	}
+
+	public void setCuadroConfusional(String cuadroConfusional) {
+		this.cuadroConfusional = cuadroConfusional;
+	}
+
+	@Column(name = "cuadro_neurologico", length = 2)
+	public String getCuadroNeurologico() {
+		return cuadroNeurologico;
+	}
+
+	public void setCuadroNeurologico(String cuadroNeurologico) {
+		this.cuadroNeurologico = cuadroNeurologico;
+	}
+
+	@Column(name = "confusion_mental", length = 2)
+	public String getConfusionMental() {
+		return confusionMental;
+	}
+
+	public void setConfusionMental(String confusionMental) {
+		this.confusionMental = confusionMental;
+	}
+
+	@Column(name = "anosmia", length = 2)
+	public String getAnosmia() {
+		return anosmia;
+	}
+
+	public void setAnosmia(String anosmia) {
+		this.anosmia = anosmia;
+	}
+
+	@Column(name = "ageusia", length = 2)
+	public String getAgeusia() {
+		return ageusia;
+	}
+
+	public void setAgeusia(String ageusia) {
+		this.ageusia = ageusia;
+	}
+
+	@Column(name = "mareo", length = 2)
+	public String getMareo() {
+		return mareo;
+	}
+
+	public void setMareo(String mareo) {
+		this.mareo = mareo;
+	}
+
+	@Column(name = "ictus", length = 2)
+	public String getIctus() {
+		return ictus;
+	}
+
+	public void setIctus(String ictus) {
+		this.ictus = ictus;
+	}
+
+	@Column(name = "sincope", length = 2)
+	public String getSincope() {
+		return sincope;
+	}
+
+	public void setSincope(String sincope) {
+		this.sincope = sincope;
 	}
 
 }

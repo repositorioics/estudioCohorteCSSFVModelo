@@ -251,6 +251,10 @@ public class HojaConsulta implements java.io.Serializable {
 	private String estudiosParticipantes;
 	private boolean uaf;
 	
+	private String repeatKey; // 07/02/2020 dia en que se agrego
+	
+	private Character cV; // 05/06/2020
+	
 	public HojaConsulta() {
 	}
 
@@ -358,7 +362,8 @@ public class HojaConsulta implements java.io.Serializable {
 			Character eritrocitos, String planes, Short medicoCambioTurno,
 			Character hemoconc, Short vomito12h, Short pad, Short pas,
 			Long telef, Character oel, String hora, String horasv, 
-			String noAtiendeLlamadoEnfermeria, String noAtiendeLlamadoMedico, String estudiosParticipantes, boolean uaf) {
+			String noAtiendeLlamadoEnfermeria, String noAtiendeLlamadoMedico, String estudiosParticipantes, boolean uaf,
+			String repeatKey, Character cV) {
 		this.secHojaConsulta = secHojaConsulta;
 		this.codExpediente = codExpediente;
 		this.numHojaConsulta = numHojaConsulta;
@@ -580,7 +585,10 @@ public class HojaConsulta implements java.io.Serializable {
 		this.noAtiendeLlamadoEnfermeria = noAtiendeLlamadoEnfermeria;
 		this.noAtiendeLlamadoMedico = noAtiendeLlamadoMedico;
 		this.estudiosParticipantes = estudiosParticipantes;
-		this.setUaf(uaf);
+		//this.setUaf(uaf);
+		this.uaf = uaf;
+		this.repeatKey = repeatKey;
+		this.cV = cV;
 	}
 
 	@Id
@@ -2388,7 +2396,7 @@ public class HojaConsulta implements java.io.Serializable {
 		this.horaUltDosisAntipiretico = horaUltDosisAntipiretico;
 	}
 
-	@Column(name = "am_pm_ult_dosis_antipiretico", length = 2)
+	@Column(name = "am_pm_ult_dosis_antipiretico", length = 6)
 	public String getAmPmUltDosisAntipiretico() {
 		return this.amPmUltDosisAntipiretico;
 	}
@@ -2597,5 +2605,23 @@ public class HojaConsulta implements java.io.Serializable {
 
 	public void setUaf(boolean uaf) {
 		this.uaf = uaf;
+	}
+	
+	@Column(name = "repeat_key", length = 10)
+	public String getRepeatKey() {
+		return repeatKey;
+	}
+
+	public void setRepeatKey(String repeatKey) {
+		this.repeatKey = repeatKey;
+	}
+	
+	@Column(name = "cv", length = 1)
+	public Character getCv() {
+		return this.cV;
+	}
+
+	public void setCv(Character cV) {
+		this.cV = cV;
 	}
 }
