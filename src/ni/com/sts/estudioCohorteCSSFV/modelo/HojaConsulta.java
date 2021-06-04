@@ -255,6 +255,8 @@ public class HojaConsulta implements java.io.Serializable {
 	
 	private Character cV; // 05/06/2020
 	
+	private Character consultaRespiratorio; // 27/11/2020
+	
 	public HojaConsulta() {
 	}
 
@@ -363,7 +365,7 @@ public class HojaConsulta implements java.io.Serializable {
 			Character hemoconc, Short vomito12h, Short pad, Short pas,
 			Long telef, Character oel, String hora, String horasv, 
 			String noAtiendeLlamadoEnfermeria, String noAtiendeLlamadoMedico, String estudiosParticipantes, boolean uaf,
-			String repeatKey, Character cV) {
+			String repeatKey, Character cV, Character consultaRespiratorio) {
 		this.secHojaConsulta = secHojaConsulta;
 		this.codExpediente = codExpediente;
 		this.numHojaConsulta = numHojaConsulta;
@@ -589,6 +591,7 @@ public class HojaConsulta implements java.io.Serializable {
 		this.uaf = uaf;
 		this.repeatKey = repeatKey;
 		this.cV = cV;
+		this.consultaRespiratorio = consultaRespiratorio;
 	}
 
 	@Id
@@ -612,7 +615,7 @@ public class HojaConsulta implements java.io.Serializable {
 		this.codExpediente = codExpediente;
 	}
 
-	@Column(name = "num_hoja_consulta", nullable = false)
+	@Column(name = "num_hoja_consulta", unique = true, nullable = false)
 	public int getNumHojaConsulta() {
 		return this.numHojaConsulta;
 	}
@@ -2623,5 +2626,14 @@ public class HojaConsulta implements java.io.Serializable {
 
 	public void setCv(Character cV) {
 		this.cV = cV;
+	}
+	
+	@Column(name = "consulta_respiratorio")
+	public Character getConsultaRespiratorio() {
+		return consultaRespiratorio;
+	}
+
+	public void setConsultaRespiratorio(Character consultaRespiratorio) {
+		this.consultaRespiratorio = consultaRespiratorio;
 	}
 }
