@@ -257,6 +257,13 @@ public class HojaConsulta implements java.io.Serializable {
 	
 	private Character consultaRespiratorio; // 27/11/2020
 	
+	private Short usuarioCierraHoja; // 27/09/2021
+	private Character hojaImpresa; // 27/09/2021
+	
+	private boolean digitada;
+	private Short supervisor;
+	private boolean offline;
+	
 	public HojaConsulta() {
 	}
 
@@ -365,7 +372,8 @@ public class HojaConsulta implements java.io.Serializable {
 			Character hemoconc, Short vomito12h, Short pad, Short pas,
 			Long telef, Character oel, String hora, String horasv, 
 			String noAtiendeLlamadoEnfermeria, String noAtiendeLlamadoMedico, String estudiosParticipantes, boolean uaf,
-			String repeatKey, Character cV, Character consultaRespiratorio) {
+			String repeatKey, Character cV, Character consultaRespiratorio, Short usuarioCierraHoja,
+			Character hojaImpresa, boolean digitada, short supervisor, boolean offline) {
 		this.secHojaConsulta = secHojaConsulta;
 		this.codExpediente = codExpediente;
 		this.numHojaConsulta = numHojaConsulta;
@@ -592,6 +600,13 @@ public class HojaConsulta implements java.io.Serializable {
 		this.repeatKey = repeatKey;
 		this.cV = cV;
 		this.consultaRespiratorio = consultaRespiratorio;
+		this.usuarioCierraHoja = usuarioCierraHoja;
+		this.hojaImpresa = hojaImpresa;
+		this.digitada = digitada;
+		this.supervisor = supervisor;
+		//this.setOffline(offline);
+		this.offline = offline;
+
 	}
 
 	@Id
@@ -2635,5 +2650,49 @@ public class HojaConsulta implements java.io.Serializable {
 
 	public void setConsultaRespiratorio(Character consultaRespiratorio) {
 		this.consultaRespiratorio = consultaRespiratorio;
+	}
+
+	@Column(name = "usuario_cierra_hoja", nullable = true)
+	public Short getUsuarioCierraHoja() {
+		return usuarioCierraHoja;
+	}
+
+	public void setUsuarioCierraHoja(Short usuarioCierraHoja) {
+		this.usuarioCierraHoja = usuarioCierraHoja;
+	}
+
+	@Column(name = "hoja_impresa", length = 1)
+	public Character getHojaImpresa() {
+		return hojaImpresa;
+	}
+
+	public void setHojaImpresa(Character hojaImpresa) {
+		this.hojaImpresa = hojaImpresa;
+	}
+
+	public boolean isDigitada() {
+		return digitada;
+	}
+
+	public void setDigitada(boolean digitada) {
+		this.digitada = digitada;
+	}
+	
+	@Column(name = "supervisor", nullable = true)
+	public Short getSupervisor() {
+		return supervisor;
+	}
+
+	public void setSupervisor(Short supervisor) {
+		this.supervisor = supervisor;
+	}
+
+	@Column(name = "offline")
+	public boolean isOffline() {
+		return offline;
+	}
+
+	public void setOffline(boolean offline) {
+		this.offline = offline;
 	}
 }

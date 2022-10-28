@@ -32,13 +32,14 @@ public class HojaInfluenza implements java.io.Serializable {
 	private String repeatKey;
 	private Integer secHojaConsulta;
 	private String usuarioCerroHoja;
+	private String supervisor;
 
 	public HojaInfluenza() {
 	}
 
 	public HojaInfluenza(int secHojaInfluenza, int codExpediente,
 			int numHojaSeguimiento, Date fechaInicio, char cerrado, Character estadoCarga, 
-			String repeatKey, Integer secHojaConsulta, String usuarioCerroHoja) {
+			String repeatKey, Integer secHojaConsulta, String usuarioCerroHoja, String supervisor) {
 		this.secHojaInfluenza = secHojaInfluenza;
 		this.codExpediente = codExpediente;
 		this.numHojaSeguimiento = numHojaSeguimiento;
@@ -48,12 +49,13 @@ public class HojaInfluenza implements java.io.Serializable {
 		this.repeatKey = repeatKey;
 		this.secHojaConsulta = secHojaConsulta;
 		this.usuarioCerroHoja = usuarioCerroHoja;
+		this.setSupervisor(supervisor);
 	}
 
 	public HojaInfluenza(int secHojaInfluenza, int codExpediente,
 			int numHojaSeguimiento, String fif, String fis, Date fechaInicio,
 			Date fechaCierre, char cerrado, Character estadoCarga, String repeatKey, 
-			Integer secHojaConsulta, String usuarioCerroHoja) {
+			Integer secHojaConsulta, String usuarioCerroHoja, String supervisor) {
 		this.secHojaInfluenza = secHojaInfluenza;
 		this.codExpediente = codExpediente;
 		this.numHojaSeguimiento = numHojaSeguimiento;
@@ -66,6 +68,7 @@ public class HojaInfluenza implements java.io.Serializable {
 		this.repeatKey = repeatKey;
 		this.secHojaConsulta = secHojaConsulta;
 		this.usuarioCerroHoja = usuarioCerroHoja;
+		this.setSupervisor(supervisor);
 	}
 
 	@Id
@@ -179,5 +182,14 @@ public class HojaInfluenza implements java.io.Serializable {
 
 	public void setUsuarioCerroHoja(String usuarioCerroHoja) {
 		this.usuarioCerroHoja = usuarioCerroHoja;
+	}
+
+	@Column(name = "supervisor")
+	public String getSupervisor() {
+		return supervisor;
+	}
+
+	public void setSupervisor(String supervisor) {
+		this.supervisor = supervisor;
 	}
 }

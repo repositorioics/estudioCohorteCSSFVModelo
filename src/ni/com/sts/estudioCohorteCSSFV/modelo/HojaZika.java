@@ -33,6 +33,7 @@ public class HojaZika implements java.io.Serializable {
 	private String repeatKey;
 	private Integer secHojaConsulta; //Cambio agregado el 13/01/2020
 	private String usuarioCerroHoja; //Cambio agregado el 22/04/2020
+	private String supervisor;
 	
 	public HojaZika(){
 		
@@ -53,7 +54,7 @@ public class HojaZika implements java.io.Serializable {
 			char cerrado, String categoria, String sintomaInicial1,
 			String sintomaInicial2, String sintomaInicial3,
 			String sintomaInicial4, Character estadoCarga, String repeatKey, 
-			Integer secHojaConsulta, String usuarioCerroHoja) {
+			Integer secHojaConsulta, String usuarioCerroHoja, String supervisor) {
 		this.secHojaZika = secHojaZika;
 		this.codExpediente = codExpediente;
 		this.numHojaSeguimiento = numHojaSeguimiento;
@@ -71,6 +72,7 @@ public class HojaZika implements java.io.Serializable {
 		this.repeatKey = repeatKey;
 		this.secHojaConsulta = secHojaConsulta;
 		this.usuarioCerroHoja = usuarioCerroHoja;
+		this.supervisor = supervisor;
 	}
 
 	@Id
@@ -229,5 +231,14 @@ public class HojaZika implements java.io.Serializable {
 
 	public void setUsuarioCerroHoja(String usuarioCerroHoja) {
 		this.usuarioCerroHoja = usuarioCerroHoja;
+	}
+	
+	@Column(name = "supervisor")
+	public String getSupervisor() {
+		return supervisor;
+	}
+
+	public void setSupervisor(String supervisor) {
+		this.supervisor = supervisor;
 	}
 }
